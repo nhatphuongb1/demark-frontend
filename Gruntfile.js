@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   var webpack = require("webpack");
   var webpackConfig = require("./webpack.config.js");
 
@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     webpack: {
       options: webpackConfig,
       build: {
+
         plugins: webpackConfig.plugins.concat(
           new webpack.DefinePlugin({
             "process.env": {
@@ -100,4 +101,8 @@ module.exports = function(grunt) {
   grunt.registerTask("build", ["clean", "eslint", "webpack:build"]);
   grunt.registerTask("publish", ["build", "gh-pages"]);
   grunt.registerTask("lint", ["eslint"]);
+  // change the tasks in the list to your production tasks
+  grunt.registerTask('heroku',
+    ['compass:dist', 'autoprefixer', 'imagemin']);
+
 };

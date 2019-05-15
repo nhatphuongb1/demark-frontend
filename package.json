@@ -3,7 +3,7 @@
   "version": "0.9.11",
   "description": "Demark frontend",
   "main": "app/app.jsx",
-  "scripts": {h
+  "scripts": {
     "build": "grunt build",
     "dist": "grunt build",
     "prestart": "npm install",
